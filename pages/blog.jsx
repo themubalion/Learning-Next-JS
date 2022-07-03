@@ -8,7 +8,7 @@ function Blog() {
     console.log('use effect is working');
 
     // fetching api from blogs.js api
-    fetch('./api/blogs').then((a) => {
+    fetch('../api/blogs').then((a) => {
       return a.json();
       }).then((parsed)=>{
 
@@ -32,7 +32,7 @@ function Blog() {
             return (<Link href={'./blogpost/'+blogitem.slug}>
             <div className="blogItem cursor-pointer my-6" key={blogitem.slug}>
               <div>
-                <h3 className=''>{blogitem.title}</h3>
+                <h3 className=''>{blogitem.slug}</h3>
                 <div>{blogitem.previewContent}</div>
               </div>
               <button className='bg-black text-white my-2 py-1 px-2 rounded-md'>Read More</button>

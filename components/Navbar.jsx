@@ -3,9 +3,9 @@ import Link from 'next/link'
 
 function Navbar() {
   return (
-    <div className='flex justify-center mb-4'>
+    <div className='flex justify-center mb-4 '>
         <nav className=' flex justify-center'>
-        <ul className='flex justify-start w-full font-bold text-center '>
+        <ul className='flex overflow-auto justify-start w-[80vw] font-bold text-center '>
           <Link href="../">
             <a>
             <li className='py-2 px-8 hover:bg-purple-800 hover:text-white' >

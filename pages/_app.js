@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
     <div>
       <HeadComponent />
       <Navbar />
-      <div className='min-h-screen flex flex-col justify-between'>
+      <div className=' overflow-hidden min-h-screen flex flex-col justify-between'>
         <Component {...pageProps}/>
         <Footer />
       </div>
