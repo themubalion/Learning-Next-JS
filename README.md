@@ -18,7 +18,7 @@ will be the start of my full stack carrier.
 ```javascript
 window.alert('You are an idiot who thinks this plan will be successful')
 console.log('I am that idiot bro')
-console.log(```But bro my main aim is to become an Indie Game Developer,
-for that I will need a nice laptop with and rtx card```)
+console.log(`But bro my main aim is to become an Indie Game Developer,
+for that I will need a nice laptop with and rtx card`)
 
 ```
