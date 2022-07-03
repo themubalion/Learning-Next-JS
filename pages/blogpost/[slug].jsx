@@ -4,20 +4,20 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 const Slug = () => {
-  var Router = useRouter();
   const [Blog, setBlog] = useState([])
+  var Router = useRouter();
   useEffect(() => {
+    const {slug} = (Router.query)
     if(!Router.isReady) return;
     else{
 
-      const {slug} = (Router.query)
-      fetch(`../api/getblogs?slug=${slug}`).then((a) => {
+      fetch(`http://localhost:3000/api/getblogs?slug=${slug}`).then((a) => {
         return a.json();
       }).then((parsed) => {
         setBlog(parsed)
       })
     }
-  }, [Router.isReady])
+  }, [Router.query])
   return (
     <div className='my-8'>
 

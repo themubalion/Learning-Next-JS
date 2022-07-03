@@ -31,8 +31,8 @@ export default function Home() {
               <h2>Our Popular Posts</h2>
               <div className=''>
                 {Blog.map((blogitem) => {
-                  return (<Link href={'../blogpost/' + blogitem.slug}>
-                    <div className="blogItem cursor-pointer my-6" key={blogitem.slug}>
+                  return (<Link href={'../blogpost/' + blogitem.slug} key={blogitem.slug}>
+                    <div className="blogItem cursor-pointer my-6" >
                       <div>
                         <h3 className=''>{blogitem.title}</h3>
                         <div>{blogitem.previewContent}</div>
