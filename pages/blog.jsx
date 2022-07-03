@@ -26,7 +26,7 @@ function Blog() {
 
           {Blog.map((blogitem)=>{
             return (<Link href='./blogpost/learn-javascript'>
-            <div className="blogItem cursor-pointer my-6" key={indexOf(blogitem)}>
+            <div className="blogItem cursor-pointer my-6" key={blogitem.title}>
               <div>
                 <h3 className=''>{blogitem.title}</h3>
                 <div>{blogitem.previewContent}</div>
