@@ -6,10 +6,14 @@ function Blog() {
   const [Blog, setBlog] = useState([]);
   useEffect(() => {
     console.log('use effect is working');
+
+    // fetching api from blogs.js api
     fetch('./api/blogs').then((a) => {
       return a.json();
       }).then((parsed)=>{
-        console.log(parsed)
+
+        // Checking if the object been fetched or not
+        // console.log(parsed)
         setBlog(parsed)
       })
     },[])

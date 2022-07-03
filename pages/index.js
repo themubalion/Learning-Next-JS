@@ -4,14 +4,17 @@ import { useState } from 'react'
 
 export default function Home() {
   const [Blog, setBlog] = useState([])
-  useEffect(()=>{
-    fetch('./api/blogs').then((a)=>{
+  useEffect(() => {
+    fetch('./api/blogs').then((a) => {
       return a.json();
-    }).then((parsed)=>{
+    }).then((parsed) => {
+      //Checking if it gets the thing
+      // console.log(parsed)
+      
       setBlog(parsed)
-      console.log(parsed)
+
     })
-  },[])
+  }, [])
   return (
     <div className="relative">
 
@@ -25,18 +28,18 @@ export default function Home() {
           <div className='flex justify-center'>
             <div className="blog">
               <h2>Our Popular Posts</h2>
-              {Blog.map((blogitem)=>{
-            return (<Link href={'./blogpost/'+blogitem.slug}>
-            <div className="blogItem cursor-pointer my-6" key={blogitem.slug}>
-              <div>
-                <h3 className=''>{blogitem.title}</h3>
-                <div>{blogitem.previewContent}</div>
-              </div>
-              <button className='bg-black text-white my-2 py-1 px-2 rounded-md'>Read More</button>
-            </div>
-          </Link>)
-          }
-          )}
+              {Blog.map((blogitem) => {
+                return (<Link href={'./blogpost/' + blogitem.slug}>
+                  <div className="blogItem cursor-pointer my-6" key={blogitem.slug}>
+                    <div>
+                      <h3 className=''>{blogitem.title}</h3>
+                      <div>{blogitem.previewContent}</div>
+                    </div>
+                    <button className='bg-black text-white my-2 py-1 px-2 rounded-md'>Read More</button>
+                  </div>
+                </Link>)
+              }
+              )}
             </div>
 
           </div>

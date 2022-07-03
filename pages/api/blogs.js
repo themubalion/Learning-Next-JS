@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     allBlogs.push(JSON.parse(myFile))
   }
 
-  console.log('Yo->',allBlogs)
+  // console.log('Yo->',allBlogs)
 
   res.status(200).json(allBlogs)
 
