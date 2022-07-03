@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-const slug = () => {
+const Slug = () => {
   var Router = useRouter();
   const { slug } = (Router.query)
   return (
@@ -20,4 +20,4 @@ const slug = () => {
   )
 }
 
-export default slug
+export default Slug
