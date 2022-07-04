@@ -2,26 +2,9 @@ import React, { useEffect } from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
 
-function Blog() {
-  const [Blog, setBlog] = useState([]);
-  useEffect(() => {
-    console.log('use effect is working');
-
-    // fetching api from blogs.js api
-    fetch('./api/blogs').then((a) => {
-      return a.json();
-      }).then((parsed)=>{
-
-        // Checking if the object been fetched or not
-        // console.log(parsed)
-        setBlog(parsed)
-      })
-    },[])
-  //     .then((parsed)=>{
-  //       console.log(Blog)
-  //       setBlog(...Blog,parsed)
-  //     })
-  // },[])
+function Blog(props) {
+  console.log(props)
+  const [Blog, setBlog] = useState(props.allBlogs);
   return (
     <>
       <div className='flex justify-center'>
@@ -79,4 +62,13 @@ function Blog() {
   )
 }
 
+export async function getServerSideProps(context) {
+  let newData = await fetch('http://localhost:3000/api/blogs')
+  let allBlogs = await newData.json();
+
+  return {
+    props: {allBlogs}, // will be passed to the page component as props
+  }
+}
 export default Blog
+
