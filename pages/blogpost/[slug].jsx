@@ -2,9 +2,13 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import { useState } from 'react';
 import { useEffect } from 'react';
+import * as fs from 'fs';
 
 const Slug = (props) => {
   const [Blog, setBlog] = useState(props.blogData)
+  function createMarkup(h){
+    return{__html:h}
+  }
 
   return (
     <div className='my-8'>
@@ -16,22 +20,33 @@ const Slug = (props) => {
 
         <hr className='my-4' />
 
-        <p className='my-4'>{Blog && Blog.content}</p>
+        <div className='my-4 text-xl'>
+          {Blog &&<div dangerouslySetInnerHTML={createMarkup(Blog.content)} />}
+          </div>
       </div>
 
     </div>
   )
 }
 
-export async function getServerSideProps(context) {
-  // var Router = useRouter();
-  // if (!Router.isReady) return;
-  // const { slug } = (Router.query)
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { slug:"Learn-NodeJS" } },
+      { params: { slug:"learnJavascript" } }
+    ],
+    fallback: true // false or 'blocking'
+  };
+}
 
-  console.log(context.req)
 
-  let newData = await fetch(`http://localhost:3000/api/getblogs?slug=${context.query.slug}`)
-  let blogData = await newData.json()
+export async function getStaticProps(context) {
+
+  let {slug} =  context.params;
+
+  let a = await fs.promises.readFile(`./blog-posts/${slug}.json`,'utf-8',
+    )
+  let blogData =  await JSON.parse(a)
 
   return {
     props: { blogData }, // will be passed to the page component as props

@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import * as fs from 'fs'
 
-export default function Home() {
-  const [Blog, setBlog] = useState([])
+export default function Home(props) {
+  const [Blog, setBlog] = useState(props.allBlogs)
   useEffect(() => {
     fetch('./api/blogs').then((a) => {
       return a.json();
@@ -35,7 +36,7 @@ export default function Home() {
                   <div className="blogItem cursor-pointer my-6" >
                     <div>
                       <h3 className=''>{blogitem.title}</h3>
-                      <div>{blogitem.previewContent}</div>
+                      <div>{blogitem.metadesc}</div>
                     </div>
                     <button className='bg-black text-white my-2 py-1 px-2 rounded-md'>Read More</button>
                   </div>
@@ -52,4 +53,20 @@ export default function Home() {
 
     </div>
   )
+}
+
+export async function getStaticProps(context) {
+
+  let data = await fs.promises.readdir('blog-posts');
+  let myFile;
+  let allBlogs= [];
+  for (let index = 0; index < data.length; index++) {
+    const item = data[index];
+    myFile = await fs.promises.readFile(`blog-posts/${item}`,'utf-8')
+    allBlogs.push(JSON.parse(myFile))
+  }
+
+  return {
+    props: { allBlogs }, // will be passed to the page component as props
+  }
 }
