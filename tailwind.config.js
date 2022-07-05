@@ -6,7 +6,16 @@ module.exports = {
     "./dummyArticles/**/*.{*,js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'contactUs': "url('/contactUs.jpg') ",
+      },
+      screens: {
+        'md': {'max': '767px'},
+        'small': {'max': '650px'},
+        'notSmall': '650px'
+      }
+    },
   },
   plugins: [],
 }
