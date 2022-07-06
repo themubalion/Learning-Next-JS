@@ -19,11 +19,12 @@ export default function Home(props) {
   return (
     <div className='relative'>
       <div className="bg-titleBG bg-cover">
-      <div className='text-center text-white'>
-              <h1 className='font-bold text-4xl mt-8 '>Learning Next JS </h1>
-              <div className='my-12 text-lg font-mono'>In this blog I am going to share my progress over next js playlist by harry bhai.</div>
+        <div className='bg-gray-800 bg-opacity-80'>
+      <div className='text-center text-white '>
+              <h1 className='font-bold text-4xl pt-4'>Learning Next JS </h1>
+              <div className=' py-4 text-lg font-mono'>In this blog I am going to share my progress over next js playlist by harry bhai.</div>
             </div>
-            <div className='flex justify-start pl-12'>
+            <div className='flex small:justify-center justify-start notSmall:pl-12'>
           <main className='max-w-[95vw]'>
 
             <div className='flex justify-start'>
@@ -51,6 +52,7 @@ export default function Home(props) {
 
             </div>
           </main>
+          </div>
         </div>
       </div>
 
