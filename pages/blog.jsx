@@ -10,7 +10,7 @@ function Blog(props) {
   const [Count, setCount] = useState(1)
 
   const fetchMoreData = async() => {
-    let d = await fetch(`https://learning-next-js-theta.vercel.app/api/blogs/?count=${Count + 2}`);
+    let d = await fetch(`../api/blogs/?count=${Count + 2}`);
     setCount(Count + 2)
     data = await d.json();
     setBlog(data)

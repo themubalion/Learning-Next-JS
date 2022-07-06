@@ -1,4 +1,4 @@
-// valid slug https://learning-next-js-theta.vercel.app/api/getblogs?slug=Learn-Javascipt
+// valid slug ../api/getblogs?slug=Learn-Javascipt
 
 import * as fs from 'fs';
 

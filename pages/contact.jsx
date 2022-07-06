@@ -18,7 +18,7 @@ function Contact() {
       desc };
     console.log(data)
 
-    fetch('https://learning-next-js-theta.vercel.app/api/postcontact/', {
+    fetch('../api/postcontact/', {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',
