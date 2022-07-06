@@ -1,4 +1,4 @@
-// valid slug http://localhost:3000/api/getblogs?slug=Learn-Javascipt
+// valid slug ../api/getblogs?slug=Learn-Javascipt
 
 import * as fs from 'fs';
 

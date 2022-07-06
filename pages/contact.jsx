@@ -18,7 +18,7 @@ function Contact() {
       desc };
     console.log(data)
 
-    fetch('http://localhost:3000/api/postcontact/', {
+    fetch('../api/postcontact/', {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',
@@ -59,26 +59,26 @@ function Contact() {
 
           <h1 className='text-3xl font-bold block'>Contact Us</h1>
           <div>
-            <form onSubmit={submit} method='POST' className='notSmall:w-[40vw] rounded-lg my-6 bg-gray-600 p-8 bg-opacity-60'>
+            <form onSubmit={submit} method='POST' className=' text-white notSmall:w-[40vw] rounded-lg my-6 bg-gray-600 p-8 bg-opacity-60'>
 
               <div className='formContainer flex flex-col  my-4'>
                 <label htmlFor="name" className='text-xl font-semibold'>Name:</label>
-                <input onChange={valueChange} value={name} type="text" name='name' id='name' className='w-full border-black border-[1px] rounded-md h-8 px-2 font-sans ' required />
+                <input onChange={valueChange} value={name} type="text" name='name' id='name' className='text-black w-full border-black border-[1px] rounded-md h-8 px-2 font-sans ' required />
               </div>
 
               <div className='formContainer flex flex-col my-4 '>
                 <label htmlFor="email" className='text-xl font-semibold'>Email:</label>
-                <input onChange={valueChange} value={email} type="email" name='email' id='email' className='w-full border-black border-[1px] rounded-md h-8 px-2 font-sans ' required />
+                <input onChange={valueChange} value={email} type="email" name='email' id='email' className='text-black w-full border-black border-[1px] rounded-md h-8 px-2 font-sans ' required />
               </div>
 
               <div className='formContainer flex flex-col my-4 '>
                 <label htmlFor="phone" className='text-xl font-semibold'>Phone:</label>
-                <input onChange={valueChange} value={phone} type="text" name='phone' id='phone' className='w-full border-black border-[1px] rounded-md h-8 px-2 font-sans ' maxLength='10' minLength={10} required />
+                <input onChange={valueChange} value={phone} type="text" name='phone' id='phone' className='text-black w-full border-black border-[1px] rounded-md h-8 px-2 font-sans ' maxLength='10' minLength={10} required />
               </div>
 
               <div className='formContainer flex flex-col my-4 '>
                 <label htmlFor="desc" className='text-xl font-semibold'>Description:</label>
-                <textarea onChange={valueChange} value={desc} placeholder='Write you concern here...' type="text" name='desc' id='desc' className='w-full border-black border-[1px] rounded-md h-24 px-2 font-sans ' required />
+                <textarea onChange={valueChange} value={desc} placeholder='Write you concern here...' type="text" name='desc' id='desc' className='text-black w-full border-black border-[1px] rounded-md h-24 px-2 font-sans ' required />
               </div>
 
 
