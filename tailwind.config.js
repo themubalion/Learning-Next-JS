@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'contactUs': "url('/contactUs.jpg') ",
+        'titleBG':"url('/titleBg.jpg')"
       },
       screens: {
         'md': {'max': '767px'},

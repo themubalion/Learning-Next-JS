@@ -2,7 +2,12 @@ import * as fs from 'fs';
 
 export default async function handler(req, res) {
   let data = await fs.promises.readdir('blog-posts');
-  data = data.slice(0,parseInt(req.query.count))
+  if(req.query.count){
+    data = data.slice(0,parseInt(req.query.count))
+  }
+  else {
+    data = data.slice(0,3)
+  }
 
   let myFile;
   let allBlogs= [];
