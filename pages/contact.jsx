@@ -55,11 +55,11 @@ function Contact() {
 
     return (
       <>
-        <div className='flex items-center flex-col h-full w-full pt-4 bg-contactUs bg-cover'>
+        <div className='flex items-center flex-col h-full w-full pt-4 bg-contactUs bg-cover min-h-screen'>
 
           <h1 className='text-3xl font-bold block'>Contact Us</h1>
           <div>
-            <form onSubmit={submit} method='POST' className='w-[40vw] rounded-lg my-6 bg-gray-600 p-8 bg-opacity-60'>
+            <form onSubmit={submit} method='POST' className='notSmall:w-[40vw] rounded-lg my-6 bg-gray-600 p-8 bg-opacity-60'>
 
               <div className='formContainer flex flex-col  my-4'>
                 <label htmlFor="name" className='text-xl font-semibold'>Name:</label>

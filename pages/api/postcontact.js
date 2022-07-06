@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 
 export default function handler(req, res) {
-  let fName = req.body.name;
+  let fName = `${req.body.name},`;
   if (req.method === 'POST') {
 
     fs.appendFile(`contactData/${fName}.json`,
