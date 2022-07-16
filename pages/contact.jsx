@@ -18,7 +18,7 @@ function Contact() {
       desc };
     console.log(data)
 
-    fetch('../api/postcontact/', {
+    fetch('/api/postcontact/', {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',
