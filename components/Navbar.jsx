@@ -61,7 +61,7 @@ function Navbar() {
           <a href="" className='my-2 block text-white ml-8 transition delay-300 text-xl font-bold absolute top-3 right-3' onClick={closeNav}>&times;</a>
 
           <div className='absolute top-8'>
-            <Link href={'../'}>
+            <Link href={'/'}>
               <a className='my-2 block text-white ml-8 transition delay-300 text-xl font-bold ' onClick={closeNav}>Home</a></Link>
             <Link href={'about'}>
               <a className='my-2 block text-white ml-8 transition delay-300 text-xl font-bold ' onClick={closeNav}>About</a></Link>
